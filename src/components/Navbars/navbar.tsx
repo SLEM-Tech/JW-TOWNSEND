@@ -1,36 +1,39 @@
 "use client";
+import { currencyOptions, filterCustomersByEmail } from "@constants";
 import { Button } from "@nextui-org/button";
 import {
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
+  Modal,
+  ModalContent,
 } from "@nextui-org/react";
-import { BiBox, BiMapPin, BiPackage, BiSearch, BiMenu } from "react-icons/bi";
-import { usePathname, useRouter } from "next/navigation";
-import { currencyOptions, filterCustomersByEmail } from "@constants";
-import * as bi from "react-icons/bi";
-import { FaCartArrowDown } from "react-icons/fa";
-import { FiSearch, FiShoppingCart, FiUser } from "react-icons/fi";
-import { useCart } from "react-use-cart";
+import { useDisclosure } from "@node_modules/@nextui-org/use-disclosure/dist";
+import Link from "@node_modules/next/link";
+import { HiShoppingBag } from "@node_modules/react-icons/hi";
 import { IoChevronDownCircleOutline } from "@node_modules/react-icons/io5";
-import { getFirstCharacter, signOut } from "@utils/lib";
-import { FormatMoney2 } from "../Reusables/FormatMoney";
-import React, { useEffect, useRef, useState } from "react";
-import FormToast from "../Reusables/Toast/SigninToast";
-import { useMutation } from "react-query";
-import { AnimatePresence, motion } from "framer-motion";
 import { APICall } from "@utils";
 import { fetchExchangeRate } from "@utils/endpoints";
-import { useCustomer } from "../lib/woocommerce";
-import { useAppDispatch, useAppSelector } from "../hooks";
-import BaseCurrency from "../Reusables/BaseCurrency";
-import { setBaseCurrency, setExchangeRate } from "../Redux/Currency";
-import useToken from "../hooks/useToken";
-import Link from "@node_modules/next/link";
-import Picture from "../picture/Picture";
+import { getFirstCharacter, signOut } from "@utils/lib";
+import { AnimatePresence, motion } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
+import * as bi from "react-icons/bi";
+import { BiBox, BiMapPin, BiMenu, BiPackage, BiSearch } from "react-icons/bi";
+import { FaCartArrowDown } from "react-icons/fa";
+import { FiShoppingCart, FiUser } from "react-icons/fi";
 import { SlArrowDown } from "react-icons/sl";
-import { HiShoppingBag } from "@node_modules/react-icons/hi";
+import { useMutation } from "react-query";
+import { useCart } from "react-use-cart";
+import { useAppDispatch, useAppSelector } from "../hooks";
+import useToken from "../hooks/useToken";
+import { useCustomer } from "../lib/woocommerce";
+import Picture from "../picture/Picture";
+import { setBaseCurrency, setExchangeRate } from "../Redux/Currency";
+import BaseCurrency from "../Reusables/BaseCurrency";
+import { FormatMoney2 } from "../Reusables/FormatMoney";
+import FormToast from "../Reusables/Toast/SigninToast";
 
 const categories = [
   "All",
@@ -55,6 +58,8 @@ export default function HeaderNav() {
   const [isSearchLoading, setIsSearchLoading] = useState(false);
   const [isUserClick, setIsUserClick] = useState(false);
   const isUserPathname = pathname.includes("user");
+  const [isMobileNav, setIsMobileNav] = useState(false);
+  const [drawerVisible, setDrawerVisible] = useState(false);
 
   const { baseCurrency } = useAppSelector((state) => state.currency);
   const [selectedCurrency, setSelectedCurrency] = useState(baseCurrency.code);
@@ -115,6 +120,35 @@ export default function HeaderNav() {
     } else if (e.key === "Escape") {
       setIsExpanded(false);
     }
+  };
+
+  const handleSearch = () => {
+    setIsSearchLoading(true);
+    if (pathname === "/search") {
+      setIsSearchLoading(false);
+      router.push(`/search?${searchValue}`);
+    } else {
+      router.push(`/search?${searchValue}`);
+    }
+  };
+
+  const {
+    isOpen: isOpenBaseCurrency,
+    onOpen: onOpenBaseCurrency,
+    onOpenChange: onOpenChangeBaseCurrency,
+  } = useDisclosure();
+
+  const openDrawer = () => {
+    setDrawerVisible(true);
+  };
+
+  const closeDrawer = () => {
+    setDrawerVisible(false);
+  };
+
+  const handleNavMenuClick = () => {
+    setIsMobileNav(!isMobileNav);
+    openDrawer();
   };
 
   const handleisMobileNavClick = () => {
@@ -190,10 +224,10 @@ export default function HeaderNav() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-7xl mx-auto">
       {/* Top Bar */}
-      <div className="bg-gray-100 px-4 py-2 text-sm text-gray-600">
-        <div className="container mx-auto hidden md:flex items-center justify-between">
+      <div className="bg-gray-100 py-2 text-sm text-gray-600">
+        <div className=" mx-auto hidden md:flex items-center justify-between">
           <span>Welcome to worldwide Megamart!</span>
           <div className="flex items-center gap-4 text-sm">
             <div className="flex items-center gap-1">
@@ -213,14 +247,17 @@ export default function HeaderNav() {
       </div>
 
       {/* Main Header */}
-      <header className="bg-white sticky top-0 z-50 border-b px-4 py-3 shadow-sm">
+      <header className="sticky top-0 left-0 z-50 flex w-full items-center justify-between bg-white px-4 py-3 shadow-sm sm:px-6 lg:px-8">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo + Menu */}
           <div className="flex items-center gap-4">
             <div className="text-xl md:text-2xl font-bold text-blue-600">
               <Link href="/">Megamart</Link>
             </div>
-            <button className="md:hidden text-2xl text-blue-600">
+            <button
+              onClick={handleNavMenuClick}
+              className="rounded-lg bg-gray-100 p-3 text-cyan-500 transition hover:bg-gray-200"
+              aria-label="Open navigation menu">
               <BiMenu />
             </button>
           </div>
@@ -230,6 +267,10 @@ export default function HeaderNav() {
             <div className="relative" ref={searchRef}>
               <BiSearch className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-blue-500" />
               <input
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSearch();
+                }}
                 ref={inputRef}
                 value={searchValue}
                 onChange={handleInputChange}
@@ -238,6 +279,7 @@ export default function HeaderNav() {
                 className="w-full rounded-md bg-blue-50 py-1.5 md:py-2 pl-10 pr-4 text-sm placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
               <button
+                aria-label="Search options"
                 onClick={handleSearchClick}
                 className="absolute right-2 top-1/2 -translate-y-1/2 text-blue-400 hidden md:block">
                 <BiSearch className="h-5 w-5" />
@@ -378,6 +420,17 @@ export default function HeaderNav() {
           </div>
         </div>
       </header>
+
+      <Modal
+        backdrop="opaque"
+        isOpen={isOpenBaseCurrency}
+        onOpenChange={onOpenChangeBaseCurrency}
+        isDismissable={false}
+        size="sm">
+        <ModalContent>
+          {(onClose) => <BaseCurrency onClose={onClose} />}
+        </ModalContent>
+      </Modal>
 
       {/* Navigation Categories */}
       <div className="bg-white border-b px-4 py-2">

@@ -30,157 +30,186 @@ import graphicsImg from "../transco/graphics.png";
 import bedImg from "../transco/bed.png";
 
 export {
-	banner,
-	bedImg,
-	furnitureImg,
-	goldenImg,
-	graphicsImg,
-	salvaImg,
-	travelImg,
-	flowerImg,
-	headsetImg,
-	phoneSample,
-	highestImage,
-	iphoneImage,
-	logoImage,
-	heroImage,
-	officeImg1,
-	confetti,
-	computerOfficeResponsive2,
-	computerOfficeImg,
-	superProductImage,
-	superDiscountImg,
-	homeImage1,
-	homeImage2,
-	homeImage3,
-	homeImage4,
-	homeImage5,
-	homeImage6,
-	fivelinxMarts,
-	categoryImg,
-	categoryImg1,
-	categoryImg2,
+  banner,
+  bedImg,
+  furnitureImg,
+  goldenImg,
+  graphicsImg,
+  salvaImg,
+  travelImg,
+  flowerImg,
+  headsetImg,
+  phoneSample,
+  highestImage,
+  iphoneImage,
+  logoImage,
+  heroImage,
+  officeImg1,
+  confetti,
+  computerOfficeResponsive2,
+  computerOfficeImg,
+  superProductImage,
+  superDiscountImg,
+  homeImage1,
+  homeImage2,
+  homeImage3,
+  homeImage4,
+  homeImage5,
+  homeImage6,
+  fivelinxMarts,
+  categoryImg,
+  categoryImg1,
+  categoryImg2,
 };
 
 export const fashionSnip = {
-	src: "./images/fashion-snip.png",
-	alt: "Fashion snip",
+  src: "./images/fashion-snip.png",
+  alt: "Fashion snip",
 };
 
 export const petSnip = {
-	src: "./images/pet-snip.png",
-	alt: "Pet snip",
+  src: "./images/pet-snip.png",
+  alt: "Pet snip",
 };
 
 export const pharmacySnip = {
-	src: "./images/pharmacy-snip.png",
-	alt: "Pharmacy snip",
+  src: "./images/pharmacy-snip.png",
+  alt: "Pharmacy snip",
 };
 
 export const breakfastSnip = {
-	src: "./images/breakfast-snip.png",
-	alt: "Breakfast snip",
+  src: "./images/breakfast-snip.png",
+  alt: "Breakfast snip",
 };
 
 export const homeImageName1 = {
-	src: "./images/home-img-1.png",
-	alt: "Home Image 1",
+  src: "./images/home-img-1.png",
+  alt: "Home Image 1",
 };
 
 export const homeImageName2 = {
-	src: "./images/home-img-2.png",
-	alt: "Home Image 2",
+  src: "./images/home-img-2.png",
+  alt: "Home Image 2",
 };
 
 export const homeImageName3 = {
-	src: "./images/home-img-3.png",
-	alt: "Home Image 3",
+  src: "./images/home-img-3.png",
+  alt: "Home Image 3",
 };
 
 export const homeImageName4 = {
-	src: "./images/home-img-4.png",
-	alt: "Home Image 4",
+  src: "./images/home-img-4.png",
+  alt: "Home Image 4",
 };
 
 export const homeImageName5 = {
-	src: "./images/home-img-5.png",
-	alt: "Home Image 5",
+  src: "./images/home-img-5.png",
+  alt: "Home Image 5",
 };
 
 export const homeImageName6 = {
-	src: "./images/home-img-6.png",
-	alt: "Home Image 6",
+  src: "./images/home-img-6.png",
+  alt: "Home Image 6",
 };
 
 export const superProductNameImg = {
-	src: "./images/super-product-img.png",
-	alt: "super product img",
+  src: "./images/super-product-img.png",
+  alt: "super product img",
 };
 export const superDiscountNameImg = {
-	src: "./images/super-discount-img.png",
-	alt: "super discount img",
+  src: "./images/super-discount-img.png",
+  alt: "super discount img",
 };
 
 export const officeImageNameImg = {
-	src: "./images/office-img.png",
-	alt: "office name img",
+  src: "./images/office-img.png",
+  alt: "office name img",
 };
 
 export const computerOfficeImageNameImg = {
-	src: "./images/computer-office-img.png",
-	alt: "computer-office img",
+  src: "./images/computer-office-img.png",
+  alt: "computer-office img",
 };
 
 export const officeImageProductNameImg1 = {
-	src: "./images/office-img.png",
-	alt: "office-product-img",
+  src: "./images/office-img.png",
+  alt: "office-product-img",
 };
 
 export const homeApplianceProductNameImg1 = {
-	src: "./images/home-appliance-img.png",
-	alt: "home-appliance-product-img",
+  src: "./images/home-appliance-img.png",
+  alt: "home-appliance-product-img",
 };
 export const electonicsBannerImageNameImg1 = {
-	src: "./images/electronics-banner-img.png",
-	alt: "electronics-banner-img",
+  src: "./images/electronics-banner-img.png",
+  alt: "electronics-banner-img",
 };
 export const electonicImageNameImg1 = {
-	src: "./images/electronic-img.png",
-	alt: "product-img",
+  src: "./images/electronic-img.png",
+  alt: "product-img",
 };
 export const productImageNameImg1 = {
-	src: "./images/product-img.png",
-	alt: "product-img",
+  src: "./images/product-img.png",
+  alt: "product-img",
 };
 export const smallProductImageNameImg1 = {
-	src: "./images/small-size-product-img.png",
-	alt: "small-product-img",
+  src: "./images/small-size-product-img.png",
+  alt: "small-product-img",
 };
 export const shoppingCartImageNameImg1 = {
-	src: "./images/shopping-cart-img.png",
-	alt: "shopping-cart-img",
+  src: "./images/shopping-cart-img.png",
+  alt: "shopping-cart-img",
 };
 export const maestroImageNameImg1 = {
-	src: "./images/maestro.png",
-	alt: "maestro-img",
+  src: "./images/maestro.png",
+  alt: "maestro-img",
 };
 export const mastercardImageNameImg1 = {
-	src: "./images/mastercard.png",
-	alt: "mastercard-img",
+  src: "./images/mastercard.png",
+  alt: "mastercard-img",
 };
 export const visaImg1 = {
-	src: "./images/visa.png",
-	alt: "visa-img",
+  src: "./images/visa.png",
+  alt: "visa-img",
 };
 export const paylaterImage1 = {
-	src: "./images/paylater-image.png",
-	alt: "paylater-image",
+  src: "./images/paylater-image.png",
+  alt: "paylater-image",
 };
 export const specialDiscountResponsive = {
-	src: "./images/special-discount-responsive-img.png",
-	alt: "special-discount-responsive-img",
+  src: "./images/special-discount-responsive-img.png",
+  alt: "special-discount-responsive-img",
 };
 export const computerOfficeResponsive = {
-	src: "./images/computer-office-responsive-image.png",
-	alt: "computer-office-responsive-img",
+  src: "./images/computer-office-responsive-image.png",
+  alt: "computer-office-responsive-img",
+};
+export const smartWatchBanner = {
+  src: "/ccp-limited/smartWatch.png",
+  alt: "smart-watch-responsive-img",
+};
+
+export const xiaomiPhone = {
+  src: "/ccp-limited/xiaomi_phone.png",
+  alt: "xiaomi-smart-phone-responsive-img",
+};
+export const xiaomiPhone1 = {
+  src: "/ccp-limited/xiaomi_front.png",
+  alt: "xiaomi-smart-phone-responsive-img",
+};
+export const samsungPhone = {
+  src: "/ccp-limited/samsung_phone.png",
+  alt: "samsung-smart-phone-responsive-img",
+};
+export const samsungPhone1 = {
+  src: "/ccp-limited/samsung_phone1.png",
+  alt: "samsung-smart-phone-responsive-img",
+};
+export const iPhone = {
+  src: "/ccp-limited/iphone.png",
+  alt: "iphone-responsive-img",
+};
+export const narzo = {
+  src: "/ccp-limited/narzo_phone.png",
+  alt: "narzo-responsive-img",
 };

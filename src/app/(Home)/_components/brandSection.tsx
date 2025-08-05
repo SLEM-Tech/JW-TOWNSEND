@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@nextui-org/button";
+import Link from "@node_modules/next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
@@ -100,11 +101,13 @@ export default function BrandsSection() {
           </h2>
           <div className="w-24 sm:w-32 h-1 bg-blue-600 mt-1 sm:mt-2"></div>
         </div>
-        <Button
-          variant="light"
-          className="hover:bg-none text-blue-600 font-medium mt-2 sm:mt-0">
-          View All →
-        </Button>
+        <Link href="/category">
+          <Button
+            variant="light"
+            className="hover:bg-none text-blue-600 font-medium mt-2 sm:mt-0">
+            View All →
+          </Button>
+        </Link>
       </div>
 
       {/* Carousel */}

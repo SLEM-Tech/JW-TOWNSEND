@@ -1,7 +1,9 @@
 "use client";
 import { FaShoppingBag } from "@node_modules/react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "@node_modules/react-icons/fi";
+import { smartWatchBanner } from "@public/images";
 import { useEffect, useState } from "react";
+import Picture from "../picture/Picture";
 
 const HeroSection = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -33,14 +35,14 @@ const HeroSection = () => {
       title: "Best Deal Online on smart watches",
       subtitle: "SMART WEARABLE.",
       discount: "UP to 80% OFF",
-      image: "/ccp-limited/ccp-image7.png",
+      image: smartWatchBanner,
     },
     {
       id: 2,
       title: "New Collection of Headphones",
       subtitle: "AUDIO ESSENTIALS.",
       discount: "UP to 50% OFF",
-      image: "/ccp-limited/ccp-image7.png",
+      image: smartWatchBanner,
     },
   ];
 
@@ -119,9 +121,19 @@ const HeroSection = () => {
                 <div className=" relative hidden md:flex justify-center items-center">
                   <div className="absolute w-[430px] h-[430px] bg-[#1C2340] border border-white/10 rounded-full top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0" />
                   <div className="absolute w-[380px] h-[380px] bg-[#2C3454] border border-white/10 rounded-full -top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0" />
-                  <img
+                  {/* <img
                     src={item.image}
                     alt={item.title}
+                    className="relative z-10 h-[150px] sm:h-[200px] md:h-[260px] object-contain drop-shadow-2xl"
+                  /> */}
+
+                  <Picture
+                    src={
+                      typeof item.image === "string"
+                        ? item.image
+                        : item.image.src
+                    }
+                    alt="highest"
                     className="relative z-10 h-[150px] sm:h-[200px] md:h-[260px] object-contain drop-shadow-2xl"
                   />
                 </div>

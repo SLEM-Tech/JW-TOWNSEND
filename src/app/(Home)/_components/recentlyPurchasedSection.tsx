@@ -1,5 +1,6 @@
 import { Button } from "@node_modules/@nextui-org/button/dist";
 import { Card } from "@node_modules/@nextui-org/card/dist";
+import Link from "@node_modules/next/link";
 import Image from "next/image";
 
 const recentProducts = [
@@ -47,17 +48,19 @@ export default function RecentlyPurchased() {
     <div className="container mx-auto px-4 py-8 max-w-[1256px]">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-lg md:text-2xl font-semibold">
             Recently <span className="text-blue-600">Purchased</span>
           </h2>
           <div className="w-32 h-1 bg-blue-600 mt-2"></div>
         </div>
-        <Button variant="light" className="text-blue-600">
-          View All →
-        </Button>
+        <Link href="/">
+          <Button variant="light" className="text-blue-600">
+            View All →
+          </Button>
+        </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2">
         {recentProducts.map((product) => (
           <Card
             key={product.id}

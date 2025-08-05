@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@nextui-org/button";
+import Link from "@node_modules/next/link";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -22,14 +23,16 @@ export default function CategoriesSection() {
     <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8 max-w-[1256px]">
       <div className="flex flex-col sm:flex-row items-center justify-between mb-4 sm:mb-6">
         <div>
-          <h2 className="text-xl sm:text-2xl font-semibold">
+          <h2 className="text-lg md:text-2xl font-semibold">
             Shop From <span className="text-blue-600">Top Categories</span>
           </h2>
           <div className="w-24 sm:w-32 h-1 bg-blue-600 mt-1 sm:mt-2"></div>
         </div>
-        <Button variant="light" className="text-blue-600 mt-2 sm:mt-0">
-          View All →
-        </Button>
+        <Link href="/category">
+          <Button variant="light" className="text-blue-600 mt-2 sm:mt-0">
+            View All →
+          </Button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 justify-center">

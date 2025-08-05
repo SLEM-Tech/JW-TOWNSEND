@@ -29,6 +29,7 @@
     "dayjs": "^1.11.9",
     "dotenv": "^16.4.5",
     "emailjs-com": "^3.2.0",
+    "embla-carousel-react": "^8.6.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "flag-icons": "^7.5.0",
