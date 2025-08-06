@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-// import Header from "./Navbars/Header";
-import Footer from "./Footers/Footer";
 import HeaderNav from "./Navbars/navbar";
 import FooterSection from "./Footers/footerSection";
 
@@ -17,7 +15,6 @@ const AppLayout = ({ children, className }: AppLayoutProps) => {
         {children}
       </div>
       <FooterSection />
-      {/* <Footer /> */}
     </main>
   );
 };

@@ -1,5 +1,5 @@
 const websiteUrl = "";
-export const websiteName = "C-C-P Service Retreat Limited";
+export const websiteName = "JW TOWNSEND COMMUNICATIONS LIMITED";
 
 export const SEODATA = {
   defaultOGImage: ``,

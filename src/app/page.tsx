@@ -1,18 +1,11 @@
-import AppLayout from "@src/components/AppLayout";
-import AllCategorySection from "@src/components/PageFragments/AllCategorySection";
-import SortedProducts from "./(Home)/_components/SortedProducts";
 import { SEODATA } from "@constants/seoContants";
-import { Metadata } from "next";
-import MiddleBanner from "./(Home)/_components/MiddleBanner";
+import AppLayout from "@src/components/AppLayout";
 import HeroSection from "@src/components/PageFragments/AllCategorySection";
-import SmartphonesSection from "./(Home)/_components/smartPhone-Section";
-import CategoriesSection from "./(Home)/_components/categorySection";
-import BrandsSection from "./(Home)/_components/brandSection";
-import RecentlyPurchased from "./(Home)/_components/recentlyPurchasedSection";
-import DealsSection from "./(Home)/_components/smartPhone-Section";
 import CategoryHighlightSection from "@src/components/sections/category-highlight";
 import TopBrandsSection from "@src/components/sections/topbrandsection";
 import TopCategoriesSection from "@src/components/sections/topcategoriessection";
+import { Metadata } from "next";
+import DealsSection from "./(Home)/_components/smartPhone-Section";
 
 const { description, title } = SEODATA.home;
 export const metadata: Metadata = {

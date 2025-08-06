@@ -34,6 +34,7 @@ import { setBaseCurrency, setExchangeRate } from "../Redux/Currency";
 import BaseCurrency from "../Reusables/BaseCurrency";
 import { FormatMoney2 } from "../Reusables/FormatMoney";
 import FormToast from "../Reusables/Toast/SigninToast";
+import Image from "@node_modules/next/image";
 
 const categories = [
   "All",
@@ -251,15 +252,23 @@ export default function HeaderNav() {
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo + Menu */}
           <div className="flex items-center gap-4">
-            <div className="text-xl md:text-2xl font-bold text-blue-600">
-              <Link href="/">Megamart</Link>
-            </div>
             <button
               onClick={handleNavMenuClick}
               className="rounded-lg bg-gray-100 p-3 text-cyan-500 transition hover:bg-gray-200"
               aria-label="Open navigation menu">
               <BiMenu />
             </button>
+            <div className="text-xl md:text-2xl font-bold text-blue-600">
+              <Link href="/">
+                <Image
+                  src="/assets/JW_TOWNSEND-LOGO.png"
+                  width={100}
+                  height={100}
+                  alt=""
+                  className="w-full h-full"
+                />
+              </Link>
+            </div>
           </div>
 
           {/* Search */}
