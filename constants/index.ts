@@ -61,7 +61,7 @@ export const splitText = (text: string) => {
 	return text.split(/(?=[A-Z])/).join(" ");
 };
 
-export const CompanyName = "INTERNATIONAL TRANS CO SUPPLY LIMITED";
+export const CompanyName = "JW Townsend";
 
 export const statusStyles: { [key: string]: string } = {
 	completed: "text-emerald-500",

@@ -15,7 +15,9 @@ export const LogoImage = ({ className }: LogoImageProps) => {
 				alt='logo'
 				priority
 				loading='lazy'
-				className={`!w-[80px] lg:!w-[100px] h-[80px] lg:h-[100px] duration-300 hover:scale-105 transition-[.3] hover:animate-pulse ${className}`}
+				width={150}
+				height={100}
+				className={`!w-[60px] lg:!w-[70px] h-[50px] lg:h-[60px] duration-300 hover:scale-105 transition-[.3] hover:animate-pulse ${className}`}
 			/>
 		</Link>
 	);

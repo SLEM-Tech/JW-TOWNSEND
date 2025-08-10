@@ -9,7 +9,7 @@ import React from "react";
 const page = () => {
 	return (
 		<AppLayout>
-			<main className='flex flex-col slg:flex-row gap-4 w-full mt-20 slg:mt-44 px-2 sm:px-6 mx-auto'>
+			<main className='container flex flex-col slg:flex-row gap-4 w-full mt-20 slg:mt-44 px-2 sm:px-6 mx-auto'>
 				<MainCategoryContent />
 			</main>
 		</AppLayout>

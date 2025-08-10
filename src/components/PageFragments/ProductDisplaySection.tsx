@@ -130,7 +130,7 @@ const ProductDisplaySection = ({ FormatedId }: ProductDisplaySectionProps) => {
 											<button
 												className={`${
 													Product?.stock_status === "instock"
-														? "bg-green-500"
+														? "bg-blue-600"
 														: Product?.stock_status === "outofstock"
 														? "bg-red-500"
 														: "bg-black"
@@ -154,7 +154,7 @@ const ProductDisplaySection = ({ FormatedId }: ProductDisplaySectionProps) => {
 											Price:
 										</h5>
 										<div className='flex gap-2 sm:gap-12 items-center flex-wrap'>
-											<h3 className='text-xl slg:text-2xl font-semibold leading-[.95] text-primary'>
+											<h3 className='text-xl slg:text-2xl font-semibold leading-[.95] text-blue-600'>
 												<FormatMoney2 value={Price} />
 											</h3>
 
@@ -196,8 +196,8 @@ const ProductDisplaySection = ({ FormatedId }: ProductDisplaySectionProps) => {
 												onClick={handleClick}
 												className={`${
 													cartItemCount === 0
-														? "bg-primaryColor-300/80 cursor-not-allowed"
-														: "bg-primaryColor-300 hover:bg-primary cursor-pointer"
+														? "bg-primary/80 cursor-not-allowed"
+														: "bg-primary hover:bg-blue-600 cursor-pointer"
 												} px-4 slg:px-8 py-3 flex items-center justify-center gap-1 rounded-lg leading-[1.5] transition w-fit`}
 											>
 												<h4 className='text-white capitalize font-semibold text-sm slg:text-base'>
@@ -206,7 +206,7 @@ const ProductDisplaySection = ({ FormatedId }: ProductDisplaySectionProps) => {
 											</button>
 										)}
 										<div className='flex gap-2 flex-col sm:flex-row sm:items-center'>
-											<span className='font-outfit text-[10px] lg:text-xs text-primaryColor-100 font-normal'>
+											<span className='font-outfit text-[10px] lg:text-xs text-blue-400 font-normal'>
 												Share
 											</span>
 											<div className='flex flex-wrap items-center gap-3 w-full'>

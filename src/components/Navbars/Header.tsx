@@ -256,7 +256,7 @@ const Header = () => {
   return (
     <>
       <header className={`bg-white shadow-sm fixed top-0 w-full z-50`}>
-        <div className="border-b border-gray-100 px-4 py-6 hidden md:block">
+        {/* <div className="border-b border-gray-100 px-4 py-6 hidden md:block">
           <div className=" px-4 py-2 text-sm">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
               <span className="text-[#666666]">
@@ -278,7 +278,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* Desktop */}
         <div className="hidden slg:grid grid-cols-4 items-center w-full py-1 max-w-[1300px] z-30 px-5 lg:px-2 xl:px-0">
           <div className="flex items-center space-x-4">
@@ -288,7 +288,7 @@ const Header = () => {
               <GiHamburgerMenu className="text-2xl" />
             </button>
             <Link href="/" className="text-2xl font-bold text-secondary-800">
-              Megamart
+              Home
             </Link>
           </div>
           <div className="flex justify-center  items-center w-fit mx-auto gap-12 overflow-hidden h-10 col-span-2">

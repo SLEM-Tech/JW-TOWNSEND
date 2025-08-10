@@ -93,7 +93,7 @@ const HeroSection = () => {
                   </p>
 
                   {/* COUNTDOWN */}
-                  <div className="flex items-center gap-1 sm:gap-2 mt-4 sm:mt-6">
+                  {/* <div className="flex items-center gap-1 sm:gap-2 mt-4 sm:mt-6">
                     {[
                       ["Hours", timeLeft.hours],
                       ["Minutes", timeLeft.minutes],
@@ -108,7 +108,7 @@ const HeroSection = () => {
                         <span className="text-xs">{label}</span>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
 
                   {/* BUTTON */}
                   <button className="mt-4 sm:mt-6 flex items-center gap-2 bg-white text-[#1C2340] px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium hover:bg-gray-100 transition">
