@@ -28,7 +28,7 @@ export const Back = () => {
 	return (
 		<button
 			onClick={() => router.back()}
-			className='flex items-center gap-1 bg-slate-800 text-white w-fit py-1 pl-1 pr-2 rounded-md group cursor-pointer'
+			className='flex items-center gap-1 bg-blue-600 text-white w-fit py-1 pl-1 pr-2 rounded-md group cursor-pointer'
 		>
 			<IoCaretBackOutline className='group-hover:-translate-x-1' />
 			<h4>Back</h4>

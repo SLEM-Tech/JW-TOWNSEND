@@ -5,7 +5,7 @@ import React from "react";
 const page = () => {
 	return (
 		<AppLayout>
-			<main className='mt-8 mx-auto max-w-[1156px]'>
+			<main className='container mt-8 mx-auto max-w-[1156px]'>
 			</main>
 		</AppLayout>
 	);

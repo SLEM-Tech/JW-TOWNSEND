@@ -57,19 +57,19 @@ const MainCategorySection = () => {
 
 	return (
 		<section
-			className={`flex w-full flex-col items-center gap-3 sm:gap-4 mb-12 pb-8`}
+			className={`flex w-full flex-col items-center gap-3 sm:gap-4 mb-12 pb-8 max-w-[1250] px-2 sm:px-6 mx-auto`}
 		>
 			{CategoryProducts && (
 				<>
 					{CategoryProducts?.length > 0 && (
 						<div className='w-full px-2'>
 							<Back />
-							<div className='flex gap-2 items-center text-2xl font-medium tracking-tight text-black'>
+							<div className='mt-6 flex gap-2 items-center text-2xl font-medium tracking-tight text-blue-600'>
 								<h4
 									dangerouslySetInnerHTML={{
 										__html: CategoryProducts[0]?.categories[0]?.name,
 									}}
-									className='text-xl lg:text-2xl font-medium tracking-tight text-black'
+									className='text-xl lg:text-2xl font-medium tracking-tight text-blue-600'
 								/>
 								({totalDocs})
 							</div>
