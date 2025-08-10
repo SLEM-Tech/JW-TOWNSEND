@@ -35,6 +35,7 @@ import BaseCurrency from "../Reusables/BaseCurrency";
 import { FormatMoney2 } from "../Reusables/FormatMoney";
 import FormToast from "../Reusables/Toast/SigninToast";
 import Image from "@node_modules/next/image";
+import MobileNav from "./MobileNav"; // Import the MobileNav component
 
 const categories = [
   "All",
@@ -60,7 +61,7 @@ export default function HeaderNav() {
   const [isUserClick, setIsUserClick] = useState(false);
   const isUserPathname = pathname.includes("user");
   const [isMobileNav, setIsMobileNav] = useState(false);
-  const [drawerVisible, setDrawerVisible] = useState(false);
+  const [drawerVisible, setDrawerVisible] = useState(false); // Add drawer state
 
   const { baseCurrency } = useAppSelector((state) => state.currency);
   const [selectedCurrency, setSelectedCurrency] = useState(baseCurrency.code);
@@ -101,6 +102,20 @@ export default function HeaderNav() {
     },
   ];
 
+  // Add drawer functions
+  const openDrawer = () => {
+    setDrawerVisible(true);
+  };
+
+  const closeDrawer = () => {
+    setDrawerVisible(false);
+  };
+
+  const handleNavMenuClick = () => {
+    setIsMobileNav(!isMobileNav);
+    openDrawer(); // Open the drawer when menu is clicked
+  };
+
   const handleSearchClick = () => {
     if (isExpanded && searchValue.trim()) {
       setIsSearchLoading(true);
@@ -138,19 +153,6 @@ export default function HeaderNav() {
     onOpen: onOpenBaseCurrency,
     onOpenChange: onOpenChangeBaseCurrency,
   } = useDisclosure();
-
-  const openDrawer = () => {
-    setDrawerVisible(true);
-  };
-
-  const closeDrawer = () => {
-    setDrawerVisible(false);
-  };
-
-  const handleNavMenuClick = () => {
-    setIsMobileNav(!isMobileNav);
-    openDrawer();
-  };
 
   const handleisMobileNavClick = () => {
     setIsUserClick(!isUserClick);
@@ -227,7 +229,7 @@ export default function HeaderNav() {
   return (
     <div className="w-full max-w-7xl mx-auto">
       {/* Top Bar */}
-      <div className="bg-gray-100 py-2 text-sm text-gray-600">
+      {/* <div className="bg-gray-100 py-2 text-sm text-gray-600">
         <div className=" mx-auto hidden md:flex items-center justify-between">
           <span>Welcome to worldwide Megamart!</span>
           <div className="flex items-center gap-4 text-sm">
@@ -245,16 +247,16 @@ export default function HeaderNav() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Header */}
       <header className="sticky top-0 left-0 z-50 flex w-full items-center justify-between bg-white px-4 py-3 shadow-sm sm:px-6 lg:px-8">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo + Menu */}
-          <div className="flex items-center gap-4">
+          <div className="flex justify-between md:justify-start w-full md:w-fit items-center gap-4">
             <button
               onClick={handleNavMenuClick}
-              className="rounded-lg bg-gray-100 p-3 text-cyan-500 transition hover:bg-gray-200"
+              className="rounded-lg bg-gray-100 p-3 text-cyan-500 transition hover:bg-gray-200 hidden md:block lg:hidden"
               aria-label="Open navigation menu">
               <BiMenu />
             </button>
@@ -269,6 +271,13 @@ export default function HeaderNav() {
                 />
               </Link>
             </div>
+
+            <button
+              onClick={handleNavMenuClick}
+              className="rounded-lg bg-gray-100 p-3 text-cyan-500 transition hover:bg-gray-200 black md:hidden"
+              aria-label="Open navigation menu">
+              <BiMenu />
+            </button>
           </div>
 
           {/* Search */}
@@ -428,6 +437,14 @@ export default function HeaderNav() {
             </div>
           </div>
         </div>
+
+        {/* Mobile Drawer */}
+        {drawerVisible && (
+          <MobileNav
+            closeDrawer={closeDrawer}
+            drawerVisible={drawerVisible}
+          />
+        )}
       </header>
 
       <Modal
@@ -442,7 +459,7 @@ export default function HeaderNav() {
       </Modal>
 
       {/* Navigation Categories */}
-      <div className="bg-white border-b px-4 py-2">
+      {/* <div className="bg-white border-b px-4 py-2">
         <div className="container mx-auto">
           <nav className="flex flex-wrap items-center gap-1 md:gap-2">
             {categories.map((cat, index) => (
@@ -460,7 +477,7 @@ export default function HeaderNav() {
             ))}
           </nav>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

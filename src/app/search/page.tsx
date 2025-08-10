@@ -20,7 +20,7 @@ const Page = () => {
 
 	return (
 		<AppLayout className='px-2'>
-			<main className='bg-white flex flex-col items-center relative justify-center w-full pt-10 mt-40 slg:mt-44 xl:pt-5 mx-auto max-w-[1156px] min-h-[50vh] mb-20 px-4 lg:px-2'>
+			<main className='bg-white flex flex-col items-center relative justify-center w-full pt-10 mt-12 xl:pt-5 mx-auto max-w-[1156px] min-h-[50vh] mb-20 px-4 lg:px-2'>
 				{ProductsTotal === 0 ? (
 					<div className=''>
 						<h3 className='text-2xl text-center tracking-tight text-secondary-200'>

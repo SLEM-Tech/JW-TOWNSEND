@@ -6,6 +6,7 @@ import TopBrandsSection from "@src/components/sections/topbrandsection";
 import TopCategoriesSection from "@src/components/sections/topcategoriessection";
 import { Metadata } from "next";
 import DealsSection from "./(Home)/_components/smartPhone-Section";
+import SortedProducts from "./(Home)/_components/SortedProducts";
 
 const { description, title } = SEODATA.home;
 export const metadata: Metadata = {
@@ -27,17 +28,19 @@ const page = () => {
       <div className=" relative">
         <HeroSection />
       </div>
-      <DealsSection
+      <TopBrandsSection />
+      {/* <DealsSection
         title="Grab the best deal on"
         highlightedText="Smartphones"
         categorySlug="smartphones"
-      />
+      /> */}
       <div className="mt-4 sm:mt-10 max-w-[1256px] mx-auto">
         <TopCategoriesSection />
       </div>
-      <TopBrandsSection />
+      
       <div className="mt-4 sm:mt-10 max-w-[1256px] mx-auto">
-        <CategoryHighlightSection />
+        {/* <CategoryHighlightSection /> */}
+        <SortedProducts/>
       </div>
     </AppLayout>
   );

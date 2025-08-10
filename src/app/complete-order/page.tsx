@@ -130,7 +130,7 @@ const Page = () => {
 
 	return (
 		<AppLayout className='px-16 sm:px-8'>
-			<main className='bg-white flex flex-col items-center relative justify-center w-full sm:py-10 mt-44 sm:mt-40 xl:mt-44 xl:py-5 mx-auto max-w-[1156px] min-h-[50vh] mb-20 px-8 lg:px-2'>
+			<main className='bg-white flex flex-col items-center relative justify-center w-full sm:py-10 mt-12 xl:py-5 mx-auto max-w-[1156px] min-h-[50vh] mb-20 px-8 lg:px-2'>
 				<div className='w-full sm:w-[24rem] flex flex-col gap-3 items-center'>
 					<Picture src={confetti} alt='confetti' className='w-16 sm:w-24' />
 					<div className='px-2 flex items-center gap-2 sm:gap-3 flex-col'>

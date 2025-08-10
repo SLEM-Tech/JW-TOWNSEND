@@ -15,7 +15,7 @@ export const topBrands: BrandInfo[] = [
   {
     name: "iPhone",
     slug: "apple", // The brand slug for the URL
-    logo: "/images/logo-tiny.svg", // You'll need to add these logo files to your /public/logos folder
+    logo: "/images/apple.png", // You'll need to add these logo files to your /public/logos folder
     productImage: "/ccp-limited/iphone.png", // Add product images to /public/products
     promoText: "UP to 80% OFF",
     bgColor: "bg-gray-800",
@@ -24,7 +24,7 @@ export const topBrands: BrandInfo[] = [
   {
     name: "Realme",
     slug: "realme",
-    logo: "/images/logo-tiny.svg",
+    logo: "/images/realme.png",
     productImage: "/ccp-limited/narzo_phone.png",
     promoText: "UP to 80% OFF",
     bgColor: "bg-yellow-100",
@@ -33,10 +33,10 @@ export const topBrands: BrandInfo[] = [
   {
     name: "Xiaomi",
     slug: "xiaomi",
-    logo: "/images/logo-tiny.svg",
-    productImage: "/ccp-limited/xiaomi_front.png",
+    logo: "/images/mi-xiaomi.png",
+    productImage: "/ccp-limited/xiaomi_phone.png",
     promoText: "UP to 80% OFF",
-    bgColor: "bg-orange-100",
+    bgColor: "bg-blue-100",
     textColor: "text-gray-800",
   },
   // Add more brands here as needed

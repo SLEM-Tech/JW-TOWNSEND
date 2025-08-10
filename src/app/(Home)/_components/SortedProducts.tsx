@@ -130,7 +130,7 @@ const SortedProducts = () => {
     ?.slice(0, 5);
 
   return (
-    <div className="mb-8 lg:mb-16 space-y-5 sm:space-y-6 mt-8 lg:mt-4">
+    <div className="mb-8 lg:mb-16 space-y-5 sm:space-y-6 mt-8 md:mt-12 lg:mt-16 py-8">
       <h3 className="text-xl sm:text-2xl md:text-3xl text-center font-light tracking-tight">
         A Marketplace like no other
       </h3>
@@ -173,7 +173,7 @@ const SortedProducts = () => {
           </div>
 
           {/* Mobile scroll indicator (only shows when scrollable) */}
-          <div className="md:hidden absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-primary to-transparent pointer-events-none" />
+          {/* <div className="md:hidden absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-black to-transparent pointer-events-none" /> */}
         </div>
 
         {/* Tab Content */}
