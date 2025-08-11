@@ -36,6 +36,7 @@ import { FormatMoney2 } from "../Reusables/FormatMoney";
 import FormToast from "../Reusables/Toast/SigninToast";
 import Image from "@node_modules/next/image";
 import MobileNav from "./MobileNav"; // Import the MobileNav component
+import { ImSpinner2 } from "react-icons/im";
 
 const categories = [
   "All",
@@ -132,7 +133,7 @@ export default function HeaderNav() {
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && searchValue.trim()) {
-      handleSearchClick();
+      handleSearch();
     } else if (e.key === "Escape") {
       setIsExpanded(false);
     }
@@ -264,10 +265,10 @@ export default function HeaderNav() {
               <Link href="/">
                 <Image
                   src="/assets/JW_TOWNSEND-LOGO.png"
-                  width={100}
-                  height={100}
+                  width={80}
+                  height={80}
                   alt=""
-                  className="w-full h-full"
+                  className="object-contain"
                 />
               </Link>
             </div>
@@ -283,7 +284,6 @@ export default function HeaderNav() {
           {/* Search */}
           <div className="w-full md:w-auto flex-1 max-w-xl">
             <div className="relative" ref={searchRef}>
-              <BiSearch className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-blue-500" />
               <input
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -292,16 +292,28 @@ export default function HeaderNav() {
                 ref={inputRef}
                 value={searchValue}
                 onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
+                onKeyDown={(event) => {
+								if (event.key === "Enter") {
+									handleSearch();
+								}
+							}}
                 placeholder="Search essentials, groceries and more..."
                 className="w-full rounded-md bg-blue-50 py-1.5 md:py-2 pl-10 pr-4 text-sm placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
-              <button
+              {!isSearchLoading ? (
+                <button
                 aria-label="Search options"
-                onClick={handleSearchClick}
+                onClick={handleSearch}
                 className="absolute right-2 top-1/2 -translate-y-1/2 text-blue-400 hidden md:block">
                 <BiSearch className="h-5 w-5" />
               </button>
+              ) : (
+                <button
+                  aria-label="Searching"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-blue-400">
+                  <ImSpinner2 className="h-5 w-5 animate-spin" />
+                </button>
+              )}
             </div>
           </div>
 
