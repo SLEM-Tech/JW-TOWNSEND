@@ -47,7 +47,7 @@ const CheckoutSummarySection = () => {
 					calculateSubtotal() === 0
 						? "bg-red-500/50"
 						: "hover:bg-primaryColor-100 bg-primary"
-				} transition font-bold text-sm sm:text-base`}
+				} transition font-bold text-sm sm:text-base cursor-not-allowed`}
 			>
 				{calculateSubtotal() === 0
 					? "Please select a product"
