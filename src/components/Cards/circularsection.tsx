@@ -15,6 +15,14 @@ interface CircularCategoryCardProps {
   };
 }
 
+export const convertToSlug = (text: string, separator = "-") => {
+  return text
+    ?.toLowerCase()
+    .replace(/&amp;/g, "and")
+    .replace(/[^\w\s]/g, "") // Remove special characters and punctuation
+    .replace(/\s+/g, separator); // Replace spaces with separator
+};
+
 const CircularCategoryCard: React.FC<CircularCategoryCardProps> = ({
   category,
 }) => {
@@ -24,7 +32,7 @@ const CircularCategoryCard: React.FC<CircularCategoryCardProps> = ({
 
   return (
     <Link
-      href={`/product-category/${category.slug}`}
+      href={`/category/${category.name ? convertToSlug(category.name) : ""}-${category.id}`}
       className="block w-24 flex-shrink-0 text-center group mx-auto">
       {/* The circular image container */}
       <div className="h-24 w-24 mx-auto rounded-full gap-5 border-2 border-gray-200 p-1 transition-all duration-300 group-hover:border-cyan-500 group-hover:shadow-md">

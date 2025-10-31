@@ -28,7 +28,7 @@ const page = () => {
       <div className=" relative">
         <HeroSection />
       </div>
-      <TopBrandsSection />
+      {/* <TopBrandsSection /> */}
       {/* <DealsSection
         title="Grab the best deal on"
         highlightedText="Smartphones"

@@ -14,6 +14,8 @@ interface CategoryType {
   count: number;
 }
 
+
+
 const TopCategoriesSection = () => {
   const { data: categories, isLoading: categoryWpIsLoading, isError } = useCategories("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
